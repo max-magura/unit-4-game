@@ -6,12 +6,94 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <title>Max's Crystal Game</title>
 </head>
 <body>
+  <div class="container-fullwidth">
+    <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div id="top-container">
+        <h1>
+          Crystal Number Game
+        </h1>
+        <hr>
+        <p>
+          You will be given a random number at the start of the game. 
+        </p>
+        <p>
+          There are four different crystals below. By clicking on one, you will add a specific amount of points to your total score.
+        </p>
+        <p>
+          You win the game by matching your total score to the random number given at the beginning of each game. You lose the game if your total score goes over the random number.
+        </p>
+        <p>
+          The value of each crystal is hidden until you click on it. And each time the game restarts, a new value is given to each crystal.
+        </p>
+        <h2>
+          Good Luck!
+        </h2>
+      </div>
+    </div>
+    </div>
+  </div>
 
-
-  
-
+  <div class="container-fullwidth">
+      <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="row">
+            <div class="col-md-2">
+              <div id="score-container">
+                <h3>Random Number:</h3>
+                <hr>
+                <p id="random-number"></p>
+                <hr size="30">
+                <h3>Your Total Score:</h3>
+                <hr>
+                <p id="total-score"></p>
+              </div>
+            </div>
+            <div class="col-md-8" id="images-container">
+              <div class="row">
+              <div class="col-md-3">
+                <div class="thumbnail">
+                      <img src="assets/images/blue-crystal.jpg" alt="Blue Crystal" style="width:100%" id="blue-crystal">
+                </div>  
+              </div>
+              <div class="col-md-3">
+                <div class="thumbnail">
+                    <img src="assets/images/orange-crystal.jpg" alt="Orange Crystal" style="width:100%" id="orange-crystal">
+                </div>  
+              </div>
+              <div class="col-md-3">
+                <div class="thumbnail">
+                    <img src="assets/images/green-crystal.jpg" alt="Green Crystal" style="width:100%" id="green-crystal">
+                </div>  
+              </div>
+              <div class="col-md-3">
+                <div class="thumbnail">
+                    <img src="assets/images/pink-crystal.jpg" alt="Pink Crystal" style="width:100%" id="pink-crystal">
+                </div>  
+              </div>
+            </div>
+            </div>
+            <div class="col-md-2">
+                <div id="score-container">
+                  <h3>Wins:</h3>
+                  <hr>
+                  <p id="win-number"></p>
+                  <hr>
+                  <h3>Losses</h3>
+                  <hr>
+                  <p id="loss-number"></p>
+                </div>
+              </div>
+        </div>
+      </div>
+      </div>
+    </div>
 </body>
 </html>
