@@ -1,45 +1,75 @@
 $(document).ready(function() {
   
   var targetNumber = "";
-  var targetNumberArray = [];
-  var crystalNumberOptions = [];
-  var blueCrystalValue = "";
-  var orangeCrystalValue = "";
-  var greenCrystalValue = "";
-  var pinkCrystalValue = "";
-  var totalScore = "";
-  var totalScoreDisplayed = parseInt(totalScore);
+  var blueCrystalValue;
+  var orangeCrystalValue;
+  var greenCrystalValue;
+  var pinkCrystalValue;
+  var totalScore = 0;
+  var wins = 0;
+  var losses = 0;
 
-  for (var i = 19; i <= 200; i++) {
-    targetNumberArray.push(i);
-    console.log(targetNumberArray.length)
-  }
+  targetNumber = Math.floor(Math.random()* (200 - 19 + 1)) + 19;
+  blueCrystalValue = Math.floor(Math.random()* (12 - 1 + 1)) + 1;
+  orangeCrystalValue = Math.floor(Math.random()* (12 - 1 + 1)) + 1;;
+  greenCrystalValue = Math.floor(Math.random()* (12 - 1 + 1)) + 1;
+  pinkCrystalValue = Math.floor(Math.random()* (12 - 1 + 1)) + 1;
 
-  for (var i = 1; i <= 12; i++) {
-    crystalNumberOptions.push(i);
-    console.log(crystalNumberOptions.length)
-  }
+  $("#random-number").text(targetNumber);
+  $("#total-score").text(totalScore);
+  $("win-number").text(wins);
+  $("loss-number").text(losses);
 
-    targetNumber = targetNumberArray[Math.floor(Math.random()*targetNumberArray.length)];
-    blueCrystalValue = crystalNumberOptions[Math.floor(Math.random()*crystalNumberOptions.length)];
-    orangeCrystalValue = crystalNumberOptions[Math.floor(Math.random()*crystalNumberOptions.length)];
-    greenCrystalValue = crystalNumberOptions[Math.floor(Math.random()*crystalNumberOptions.length)];
-    pinkCrystalValue = crystalNumberOptions[Math.floor(Math.random()*crystalNumberOptions.length)];
-
-    $("#blueCrystalValue").text(blueCrystalValue)
-    $("#orangeCrystalValue").text(orangeCrystalValue)
-    $("#greenCrystalValue").text(greenCrystalValue)
-    $("#pinkCrystalValue").text(pinkCrystalValue)
-    $("#random-number").text(targetNumber)
-    $("#total-score").text(totalScoreDisplayed)
-
-    $("#blue-crystal").on("click", function() {
-      blueCrystalValueInt = parseInt(blueCrystalValue)
-      totalScore += blueCrystalValueInt;
-      console.log(totalScore)
-    }); 
-    
+  var blueCrystalValueInt = parseInt(blueCrystalValue)
+  var orangeCrystalValueInt = parseInt(orangeCrystalValue)
+  var greenCrystalValueInt = parseInt(greenCrystalValue)
+  var pinkCrystalValueInt = parseInt(pinkCrystalValue)
   
 
-    
+    $("#blue-crystal").on("click", function clickCrystal() {
+      totalScore += blueCrystalValueInt;
+      $("#total-score").text(totalScore)
+    }) 
+
+    $("#orange-crystal").on("click", function clickCrystal() {
+      totalScore += orangeCrystalValueInt;
+      $("#total-score").text(totalScore)
+    })
+
+    $("#green-crystal").on("click", function clickCrystal() {
+      totalScore += greenCrystalValueInt;
+      $("#total-score").text(totalScore)
+    })
+
+    $("#pink-crystal").on("click", function clickCrystal() {
+      totalScore += pinkCrystalValueInt;
+      $("#total-score").text(totalScore)
+      console.log(totalScore)
+
+    })
+
+    if (totalScore === targetNumber) {
+      wins++;
+      console.log(wins)
+    }
+
+    if (totalScore > targetNumber) {
+      lossess++;
+      alert("You lose")
+    }
+
+    console.log(totalScore)
 });
+
+
+         /*  
+           var crystalValueInt = [blueCrystalValueInt, orangeCrystalValueInt,greenCrystalValueInt, pinkCrystalValueInt]
+         
+         $("#blue-crystal, #orange-crystal, #green-crystal, #pink-crystal").on("click", clickCrystal)
+    
+          function clickCrystal() {
+          for (var i=0; i< crystalValueInt.length; i++)
+          totalScore += crystalValueInt[i];
+          $("#total-score").text(totalScore);
+        }  
+        */
